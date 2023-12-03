@@ -1,0 +1,9 @@
+# Ignore
+**/bin/
+**/obj/
+*.dll
+*.pdb
+*.user
+*.suo
+.vs/
+*.sln.cache
