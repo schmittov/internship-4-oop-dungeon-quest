@@ -17,13 +17,13 @@ namespace Library.Domain.Repositories.Functions
                 switch (monsterType)
                 {
                     case 1:
-                        monster = new Goblin("Goblin", random.Next(20, 40), random.Next(5, 15), random.Next(5, 10), 60, 10);
+                        monster = new Goblin("Goblin", random.Next(20, 40), random.Next(5, 15), random.Next(10, 20), 60, 10);
                         break;
                     case 2:
-                        monster = new Brute("Brute", random.Next(70, 100), random.Next(15, 25), random.Next(10, 20), 30, 30, 1);
+                        monster = new Brute("Brute", random.Next(70, 100), random.Next(15, 25), random.Next(20, 30), 30, 30, 1);
                         break;
                     case 3:
-                        monster = new Witch("Witch", random.Next(40, 60), random.Next(25, 35), random.Next(8, 15), 10, 50);
+                        monster = new Witch("Witch", random.Next(40, 60), random.Next(25, 35), random.Next(35, 36), 10, 50);
                         break;
                     default:
                         throw new InvalidOperationException("Nepoznata vrsta čudovišta.");
@@ -31,7 +31,6 @@ namespace Library.Domain.Repositories.Functions
 
                 monsters.Add(monster);
             }
-
             return monsters;
         }
 
