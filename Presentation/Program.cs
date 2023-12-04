@@ -75,7 +75,11 @@ foreach (var monster in monsters)
     hero.HealthPoints = Hero.CheckHealthStatus(hero.HealthPoints, hero.MaxHealthPoints);
 
 
-    if (!(hero.HealthPoints >= 0))
+    if (!(hero.HealthPoints > 0))
+    {
         Console.WriteLine("Nažalost izgubili ste, pokušajte ponovno.");
+        Console.ReadKey();
+        Environment.Exit(0);
+    }
 }
 Console.WriteLine("Čestitamo uspješno ste došli do kraja dungeona, osvojili ste keks.");
