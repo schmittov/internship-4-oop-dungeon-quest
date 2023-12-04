@@ -8,10 +8,20 @@
         {
         }
 
-        public static void RageAttack()
+        public void RageAttack()
         {
-            Console.WriteLine("Izgubio si 15% hp");
-            Console.WriteLine("rage attack");
+            double healthLossPercentage = 0.15;
+            double increasedDamageMultiplier = 2;
+
+            int oldDamage = this.Damage;
+            int oldHealth = this.HealthPoints;
+
+            int newHealth = (int)(oldHealth * (1 - healthLossPercentage));
+            this.HealthPoints = newHealth;
+
+            this.Damage = (int)(oldDamage * increasedDamageMultiplier);
+
+            //this.Attack();
         }
     }
 }

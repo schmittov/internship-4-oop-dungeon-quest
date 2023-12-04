@@ -13,5 +13,22 @@
             Damage = damage;
             Level = level;
         }
+
+        public override void MakeAttack()
+        {
+            throw new NotImplementedException();
+        }
+        public static (int,int,bool) GetExperienceAndLevelUp(int monsterExperienceWorth,int heroCurrentExperience)
+        {
+            if (heroCurrentExperience + monsterExperienceWorth >= 100)
+            {
+                
+                return (heroCurrentExperience+monsterExperienceWorth-100,1,true);
+            }
+            else
+            {
+                return (monsterExperienceWorth,0,false);
+            }
+        }
     }
 }

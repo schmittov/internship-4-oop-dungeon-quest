@@ -2,6 +2,7 @@
 {
     public class Monster : Character
     {
+
         public int SpawningChance { get; set; }
         public int ExperienceWorth { get; set; }
 
@@ -13,6 +14,11 @@
             Damage = damage;
             SpawningChance = spawningChance;
             ExperienceWorth = experienceWorth;
+        }
+
+        public override void MakeAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

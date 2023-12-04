@@ -4,7 +4,7 @@
     {
 
         public Goblin(string name, int maxHealthPoints, int healthPoints, int damage, int spawningChance, int experienceWorth)
-            : base(name,maxHealthPoints,healthPoints,damage,spawningChance,experienceWorth)
+           : base(name, maxHealthPoints, healthPoints, damage, spawningChance, experienceWorth)
         {
 
         }
