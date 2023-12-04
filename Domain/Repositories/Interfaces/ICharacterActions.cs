@@ -2,6 +2,6 @@
 {
     public interface ICharacterActions
     {
-        void MakeAttack();
+        string MakeAttack(int x);
     }
 }

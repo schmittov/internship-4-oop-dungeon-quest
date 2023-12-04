@@ -9,6 +9,6 @@ namespace Library.Domain.Repositories
         public int HealthPoints { get; set; }
         public int Damage { get; set; }
 
-        public abstract void MakeAttack();
+        public abstract string MakeAttack(int x);
     }
 }

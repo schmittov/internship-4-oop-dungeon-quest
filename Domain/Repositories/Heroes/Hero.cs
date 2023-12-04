@@ -1,4 +1,6 @@
-﻿namespace Library.Domain.Repositories.Heroes
+﻿using Library.Domain.Repositories.Enums;
+
+namespace Library.Domain.Repositories.Heroes
 {
     public class Hero : Character
     {
@@ -14,9 +16,17 @@
             Level = level;
         }
 
-        public override void MakeAttack()
+        public override string MakeAttack(int choosenNumberFromTypeOfAttack)
         {
-            throw new NotImplementedException();
+            switch (choosenNumberFromTypeOfAttack)
+            {
+                case 1:
+                    return AttackType.direct.ToString();
+                case 2:
+                    return AttackType.side.ToString();
+                default:
+                    return AttackType.counter.ToString();
+            }
         }
         public static (int,int,bool) GetExperienceAndLevelUp(int monsterExperienceWorth,int heroCurrentExperience)
         {

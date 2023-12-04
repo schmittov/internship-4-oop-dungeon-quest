@@ -1,4 +1,6 @@
-﻿namespace Library.Domain.Repositories.Monsters
+﻿using Library.Domain.Repositories.Enums;
+
+namespace Library.Domain.Repositories.Monsters
 {
     public class Monster : Character
     {
@@ -16,9 +18,17 @@
             ExperienceWorth = experienceWorth;
         }
 
-        public override void MakeAttack()
+        public override string MakeAttack(int choosenNumberFromTypeOfAttack)
         {
-            throw new NotImplementedException();
+            switch (choosenNumberFromTypeOfAttack)
+            {
+                case 1:
+                    return AttackType.direct.ToString();
+                case 2:
+                    return AttackType.side.ToString();
+                default:
+                    return AttackType.counter.ToString();
+            }
         }
     }
 }

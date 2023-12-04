@@ -26,10 +26,7 @@
                         else
                             return (gladiatorHealth, gladiatorDamage, false);
                     }
-
-            } while (true);
-
-            
+            } while (true);       
         }
     }
 }

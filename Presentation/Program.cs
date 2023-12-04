@@ -45,14 +45,14 @@ foreach (var monster in monsters)
             Console.Write("Birajte vrstu napada: ");
             string input = Console.ReadLine();
             if (int.TryParse(input, out x))
-               if (x >= 1 && x <= 3)
-                    break; 
-            else
-                Console.Clear();
-        } while (true)
+                if (x >= 1 && x <= 3)
+                    break;
+                else
+                    Console.Clear();
+        } while (true);
 
-        heroAttack = Functions.ChooseAttack(x);
-        monsterAttack=Functions.ChooseAttack(randomNumber);
+        heroAttack = hero.MakeAttack(x);
+        monsterAttack=monster.MakeAttack(randomNumber);
 
         
 
