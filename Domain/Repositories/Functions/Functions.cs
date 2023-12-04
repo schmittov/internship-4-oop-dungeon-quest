@@ -1,5 +1,4 @@
-﻿using Library.Domain.Repositories.Enums;
-using Library.Domain.Repositories.Heroes;
+﻿using Library.Domain.Repositories.Heroes;
 using Library.Domain.Repositories.Monsters;
 namespace Library.Domain.Repositories.Functions
 {
@@ -48,18 +47,7 @@ namespace Library.Domain.Repositories.Functions
                 _ => marksman,
             };
         }
-        public static string ChooseAttack(int choosenNumberFromTypeOfAttack)
-        {
-            switch (choosenNumberFromTypeOfAttack)
-            {
-                case 1:
-                    return AttackType.direct.ToString();
-                case 2:
-                    return AttackType.side.ToString();
-                default:
-                    return AttackType.counter.ToString();
-            }
-        }
+        
         public static (bool, int) AttackRound(string playerAttack, string monsterAttack, Monster monster, Hero hero)
         {
             if(playerAttack==monsterAttack)
@@ -82,22 +70,6 @@ namespace Library.Domain.Repositories.Functions
                     else
                         return (false, monster.Damage);
             }
-        }
-        public static int TakeDamage(bool isVictory, int damage)
-        {
-            if (isVictory)
-            {
-                return (damage);
-            }
-            else
-            {
-                return (-damage);
-            }
-        }
-
-        public static string TypeOfAttacks()
-        {
-            return null;
         }
     }
 }

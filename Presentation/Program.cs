@@ -1,8 +1,7 @@
 ﻿using Library.Domain.Repositories.Functions;
 using Library.Domain.Repositories.Heroes;
-using Library.Domain.Repositories.Monsters;
 
-int heroChooseValue,randomNumber,x=4,counter=0;
+int heroChooseValue,randomNumber,x,counter=0;
 string heroAttack,monsterAttack;
 Console.WriteLine("Dobrodošli u Dungeons and Crawlesrs.");
 Console.WriteLine("Za nastaviti pritisnite bilo koju tipku.");

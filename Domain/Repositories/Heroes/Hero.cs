@@ -1,4 +1,5 @@
 ﻿using Library.Domain.Repositories.Enums;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Library.Domain.Repositories.Heroes
 {
@@ -15,7 +16,6 @@ namespace Library.Domain.Repositories.Heroes
             Damage = damage;
             Level = level;
         }
-
         public override string MakeAttack(int choosenNumberFromTypeOfAttack)
         {
             switch (choosenNumberFromTypeOfAttack)

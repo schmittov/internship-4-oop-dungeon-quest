@@ -3,7 +3,6 @@ namespace Library.Domain.Repositories.Monsters
 {
     public class Monster : Character
     {
-
         public int SpawningChance { get; set; }
         public int ExperienceWorth { get; set; }
 
