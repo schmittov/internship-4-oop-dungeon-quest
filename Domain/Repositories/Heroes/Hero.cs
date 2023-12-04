@@ -30,5 +30,12 @@
                 return (monsterExperienceWorth,0,false);
             }
         }
+        public static int CheckHealthStatus(int heroHealth,int heroMaxHealth)
+        {
+            if (heroHealth > heroMaxHealth)
+                return heroMaxHealth;
+            else
+                return heroHealth;
+        }
     }
 }

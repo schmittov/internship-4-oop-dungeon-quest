@@ -1,4 +1,5 @@
 ﻿using Library.Domain.Repositories.Functions;
+using Library.Domain.Repositories.Heroes;
 using Library.Domain.Repositories.Monsters;
 
 int heroChooseValue,randomNumber;
@@ -51,18 +52,19 @@ foreach (var monster in monsters)
         else
             hero.HealthPoints -= Functions.AttackRound(heroAttack, monsterAttack, monster, hero).Item2;
         
+        
         Console.Clear();
 
     } while (hero.HealthPoints > 0 && monster.HealthPoints > 0);
-
-    hero.Level+= Library.Domain.Repositories.Heroes.Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item2;
-    if(Library.Domain.Repositories.Heroes.Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item3)
+    hero.HealthPoints += (int)(hero.MaxHealthPoints*0.25);
+    hero.Level+= Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item2;
+    if(Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item3)
     {
         hero.HealthPoints = hero.MaxHealthPoints;
     }
-    hero.Experience = Library.Domain.Repositories.Heroes.Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item1;
-
+    hero.Experience = Hero.GetExperienceAndLevelUp(monster.ExperienceWorth, hero.Experience).Item1;
+    hero.HealthPoints = Hero.CheckHealthStatus(hero.HealthPoints, hero.MaxHealthPoints);
     if (!(hero.HealthPoints > 0))
         Console.WriteLine("Nažalost izgubili ste, pokušajte ponovno.");
 }
-Console.WriteLine("Čestitamo uspješno ste igru");
+Console.WriteLine("Čestitamo uspješno ste došli do kraja dungeona, osvojili ste keks.");
