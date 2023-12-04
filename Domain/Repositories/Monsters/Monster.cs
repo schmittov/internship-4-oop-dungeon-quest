@@ -1,5 +1,4 @@
 ﻿using Library.Domain.Repositories.Enums;
-
 namespace Library.Domain.Repositories.Monsters
 {
     public class Monster : Character
